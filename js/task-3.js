@@ -18,7 +18,7 @@ const images = [
     },
 ];
 
-const imgList = images.map (({url, alt}) => `<li> <img src="${url}", width = 100%, alt="${alt}"> </li>`).join ('');
+const imgList = images.reduce((acc, item) => acc + `<li class="gallery__item"><img src =${item.url} alt=${item.alt} width=400 height=320></li>`, '');
 
 
 imgGallery.insertAdjacentHTML ('beforeend', imgList);

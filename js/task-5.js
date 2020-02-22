@@ -1,13 +1,12 @@
 "use strict";
 
-const refs = {
-    inputValue: document.querySelector ('input#name-input'),
-    nameOutput: document.querySelector ('span#name-output'),
+const inputName = document.querySelector("input#name-input");
+const outputName = document.querySelector("span#name-output");
+
+const result = () => {
+    inputName.value === ""
+        ? (outputName.textContent = "незнакомец")
+        : (outputName.textContent = inputName.value);
 };
 
-
-refs.inputValue.addEventListener('input', ({ target }) => {
-    if (target.value.length === 0) {
-        refs.nameOutput.textContent = 'незнакомец';
-    } else { refs.nameOutput.textContent = target.value; }
-});
+inputName.addEventListener("input", result)
