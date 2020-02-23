@@ -3,10 +3,7 @@
 const inputName = document.querySelector("input#name-input");
 const outputName = document.querySelector("span#name-output");
 
-const result = () => {
-    inputName.value === ""
-        ? (outputName.textContent = "незнакомец")
-        : (outputName.textContent = inputName.value);
-};
+inputName.addEventListener('input', () => {
+    outputName.textContent = inputName.value === '' ? 'незнакомец' : inputName.value
+});
 
-inputName.addEventListener("input", result)
